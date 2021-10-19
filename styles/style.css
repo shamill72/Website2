@@ -142,6 +142,10 @@ p.pwhite {
     line-height: 1.5em;
 }
 
+.slideshow img {
+    border-radius: 10px 10px;
+}
+
 .banner {
     position: relative;
     min-width: 100%;
