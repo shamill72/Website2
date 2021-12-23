@@ -13,6 +13,7 @@
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <script src="https://www.google.com/recaptcha/api.js"></script>
 <link rel="stylesheet" href="styles/style.css" />
 
 
@@ -126,7 +127,10 @@
                 <input placeholder="Email" typeof="email" name="email" value=""/>
                 <textarea placeholder="Your message" typeof="text" name="body" value="Message"></textarea>
                 <br />
-                <input type="submit" class="btn">
+                <input type="submit" class="g-recaptcha" 
+                data-sitekey="reCAPTCHA_site_key" 
+                data-callback='onSubmit' 
+                data-action='submit'>
             </form>
             <div id="status"></div>
         </div>
@@ -138,6 +142,10 @@
       var header = document.querySelector('header');
       header.classList.toggle('sticky', window.scrollY > 450);
   });
+
+  function onSubmit(token) {
+     document.getElementById("email-form").submit();
+   }
   </script>
   </body>
   </html>
