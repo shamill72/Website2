@@ -74,6 +74,9 @@ p {
   font-weight: 500;
 }
 
+a.btn:hover {
+  color:#aeaeae;
+}
 .header {
   position: fixed;
   top: 0;
@@ -130,6 +133,13 @@ p {
   display: none;
 }
 
+p.pwhite {
+  font-size: 1em;
+  color: #000;
+  font-weight: 500;
+  line-height: 1.5em;
+}
+
 .element {
   padding: 4rem;
   display: grid;
@@ -137,9 +147,13 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+.element h2 {
+  margin-top: 0;
+}
+
 figure {
   max-height: 50rem;
-  padding-top: 20px;
+  padding-top: 4em;
   overflow: hidden;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -153,7 +167,7 @@ figure {
 }
 
 .bio {
-  width: 85%;
+  width: 100%;
   text-align: justify;
 }
 
@@ -318,12 +332,13 @@ figure {
 }
 
 .contact a {
-  color: #5d5de0;
+  color: rgb(93, 93, 224);
 }
 
 .contact a:hover {
   color: #2a9ef1cc;
   text-decoration: none;
+  text-shadow: 0 10px 10px rgba(93, 93, 224, .8);
 }
 
 .contactInfo h3 {
@@ -536,6 +551,10 @@ figure {
     height: auto;
   }
 
+  p.pwhite {
+    font-size: 14px;
+    color: #000;
+}
   .element {
     padding: 1rem;
   }

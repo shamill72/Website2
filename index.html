@@ -242,16 +242,16 @@
             $('div.banner h2 span').hide()
             $('div.banner a').hide()
             setTimeout(() => {
-                $('div.banner a').fadeIn(2000);
+                $('div.banner a').fadeIn(1000);
             }, 3000)
             setTimeout(() => {
-                $('div.banner h2').fadeIn(2000);
+                $('div.banner h2').fadeIn(1000);
             }, 1000)
             setTimeout(() => {
-                $('div.banner h2 span').fadeIn(2000)
+                $('div.banner h2 span').fadeIn(1000)
             }, 1000)
             setTimeout(() => {
-                $('div.banner h3').fadeIn(2000);
+                $('div.banner h3').fadeIn(1000);
             }, 2000);
         }
 
@@ -261,19 +261,19 @@
                 $('.banner-image').animate({
                     width: '500px',
                     height: 'auto',
-                }, 2000);
+                }, 1000);
                 setTimeout(() => {
                     $('.banner-image').css('border-radius', '45px 5px');
-                }, 6000)
+                }, 5000)
             } else {
-                $('.banner-image').hide().fadeIn(2000);
+                $('.banner-image').hide().fadeIn(1000);
                 $('.banner-image').animate({
                     width: '300px',
                     height: 'auto',
-                }, 2000);
+                }, 1000);
                 setTimeout(() => {
                     $('.banner-image').css('border-radius', '35px 5px');
-                }, 6000)
+                }, 3000)
             }
 
         }
