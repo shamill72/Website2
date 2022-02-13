@@ -118,7 +118,7 @@ p {
 
 .header .toggle a:hover {
   text-decoration: none;
-  color: rgb(93, 93, 224);
+  color: rgb(174,174,174);
   filter: drop-shadow(0 0 0.75rem #111);
 }
 
@@ -422,6 +422,31 @@ figure {
     text-align: center;
   }
 
+  .header .toggle {
+    position: relative;
+    display: flex;
+  }
+  
+  .header .toggle a {
+    position: relative;
+    display: inline-block;
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .header .toggle a:hover {
+    text-decoration: none;
+    color: rgb(93, 93, 224);
+    filter: drop-shadow(0 0 0.75rem #111);
+  }
+  .header.responsive.sticky .icon {
+    color: #fff;
+  }
+  .header.responsive.sticky .toggle a {
+    color: #fff;
+  }
+
   .banner-image {
     width: 50px;
     height: auto;
@@ -432,7 +457,7 @@ figure {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 5px;
+    padding: .75em;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -451,13 +476,17 @@ figure {
     display: none;
   }
   .header.responsive {
-    position: relative;
+    position: sticky;
   }
-  .header.responsive a.icon {
+  .header.responsive.sticky a.icon {
     position: absolute;
-    left: 5px;
-    top: 5px;
-    color: #111;
+    margin-left: auto;
+    top: .7em;
+
+  }
+
+  .header.responsive a.icon {
+    color:#111;
   }
   .header.responsive .toggle a {
     float: none;
@@ -465,11 +494,7 @@ figure {
     text-align: left;
     color: #111;
   }
-  .header.responsive .toggle a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
+
 
   .hero {
     background-color: rgba(0, 0, 0, 0.7);

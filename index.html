@@ -27,13 +27,13 @@
                 <i class="fa fa-bars"></i></a>
         </div>
         <div class="toggle">
-            <a href="#home">Home</a>
+            <a href="#home" onclick="scrollFunc1()">Home</a>
             <a href="#about">About</a>
             <a href="#work">Work</a>
             <a href="#contact">Contact</a>
         </div>
     </section>
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="banner">
             <h2>Hello, I'm <br /><span>Shane Hamill</span></h2>
             <h3>Web Developer</h3>
@@ -196,19 +196,36 @@
     </section>
     <script type="text/javascript">
         var w = window.innerWidth;
+
         $(window).scroll(function () {
-            if ($(this).scrollTop() > 100) {
+            if ($(this).scrollTop() > 50) {
                 $('#header').addClass('sticky')
-                $('.header a.icon').style.color = "#111";
+                $('.header a.icon').style.color = "#fff";
             } else {
                 $('#header').removeClass('sticky')
             }
         });
 
+        if(w<860){
+            let rId = document.getElementsByClassName("elements");
+            for(var i=0; i<rId.length; i++) {
+                rId[0].removeAttribute('id');
+            }
+        } else {
+            rId2 = document.getElementsByClassName("elements2");
+            for(var j=0; j<rId2.length; j++){
+                rId2[0].removeAttribute('id');
+            }
+        }
+
         function myFunction() {
             var x = document.getElementById("header");
             if (x.className === "header") {
                 x.className += " responsive";
+            } else if(x.className === "header sticky") {
+                x.className += " responsive";
+            } else if($(this).scrollTop() > 50){
+                x.className = "header sticky";
             } else {
                 x.className = "header";
             }
@@ -226,7 +243,7 @@
             $('div.banner a').hide()
             setTimeout(() => {
                 $('div.banner a').fadeIn(2000);
-            }, 4000)
+            }, 3000)
             setTimeout(() => {
                 $('div.banner h2').fadeIn(2000);
             }, 1000)
@@ -235,7 +252,7 @@
             }, 1000)
             setTimeout(() => {
                 $('div.banner h3').fadeIn(2000);
-            }, 3000);
+            }, 2000);
         }
 
         function img1FadeIn() {
@@ -261,11 +278,21 @@
 
         }
 
-        $('#aboutMe').click(function (e) {
+       /* $('#about').click(function (e) {
             e.preventDefault();
             var aid = $(this).attr('href');
             $('html, body').animate({ scrollTop: $(aid).offset().top }, 2000);
+        });*/
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e){
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
+            
 
         function enableBtn() {
             document.getElementById('send_btn').disabled = false;
